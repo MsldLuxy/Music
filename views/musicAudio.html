@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="不会爬树的鱼">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Title</title>
+  <link rel="stylesheet" href="../public/css/music.css">
+ </head>
+ <body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<div id="music">
+    <div class="top">
+         <a href="javascript:;" class="menu" id="menu">歌单</a>
+         <input type="text" id="search" placeholder="搜索歌曲"></input>
+         <a href="javascript:;" class="history" id="history">历史</a>
+         <div id="m_list" style="display:none">
+             <p><span class="songname">海阔天空</span><span class="remove1">删除</span></p>
+             <p><span class="songname">刚刚好</span><span class="remove1">删除</span></p>
+             <p><span class="songname">You Are Not Alone</span><span class="remove1">删除</span></p>
+             <p><span class="songname">光辉岁月 (粤语)</span><span class="remove1">删除</span></p>
+             <p><span class="songname">哑巴</span><span class="remove1">删除</span></p>
+             <p><span class="songname">寂寞寂寞就好</span><span class="remove1">删除</span></p>
+             <p><span class="songname">不断电</span><span class="remove1">删除</span></p>
+             <p><span class="songname">肆无忌惮</span><span class="remove1">删除</span></p>
+             <p><span class="songname">你就不要想起我</span><span class="remove1">删除</span></p>
+             <p><span class="songname">泡沫</span><span class="remove1">删除</span></p>
+             <p><span class="songname">飞得更高</span><span class="remove1">删除</span></p>
+         </div>
+         <div id="h_list"></div>
+
+        <div id="songs">
+            <div id="ul1">
+            </div>
+        </div>
+    </div>
+
+    <div class="title" id="title">海阔天空</div>
+    <div class="singer" id="singer">Beyond</div>
+    <div class="cd"></div>
+    <div class="lrc">
+         <div class="content">
+         </div>
+    </div>
+
+    <div class="progress">
+        <div class="curTime" id="curTime">00:00</div>
+        <div class="pro_bar" id="pro_bar">
+             <span id="processBar"></span>
+             <i id="processBtn"></i>
+        </div>
+        <div class="allTime" id="allTime">00:00</div>
+    </div>
+
+    <div class="foot_btn">
+
+        <div id="rand"></div>
+        <div id="prev"></div>
+        <div id="play"></div>
+        <div id="next"></div>
+    </div>
+    <div style="position: relative">
+        <div id="rand0">
+            <p>单曲循环</p>
+        </div>
+        <div id="rand1">
+            <p>顺序播放</p>
+        </div>
+        <div id="rand2">
+            <p>随机播放</p>
+        </div>
+    </div>
+    <div id="loading"></div>
+
+    <textarea id="txt" style="display:none"></textarea>
+    <audio src="" id="myMusic"></audio>
+
+    <div id="add_success">
+        <p>收藏成功</p>
+    </div>
+    <div id="remove_success">
+        <p>删除成功</p>
+    </div>
+    <div id="songExist">
+        <p>该歌曲已存在</p>
+    </div>
+
+
+
+</div>
+<script src="../public/js/music.js"></script>
+
+ </body>
+</html>

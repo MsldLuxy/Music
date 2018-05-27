@@ -1,0 +1,269 @@
+body,div,ul,li,ol,p,span,h1,h2,h3,h4,h5,h6,a,img,table,form{margin:0;padding:0;}
+body{font:16px/1.5 "Microsoft Yahei" ;}
+ul{list-style:none;}
+a{text-decoration:none;}
+.clearfix:after{content:''; display:block; clear:both;}
+html,body{
+    height: 100%;
+    overflow: hidden;
+}
+#music{
+    width:320px;
+    height:640px;
+    margin:auto;
+    background: #000;
+}
+
+.top{
+    position:relative;
+    width: 304px;
+    height: 30px;
+    text-align: center;
+    padding: 8px;
+}
+.top a{
+    float:left;
+    width: 40px;
+    height: 20px;
+    border:1px solid #fff;
+    border-radius: 10px;
+    color:#fff;
+    font-size:12px;
+    text-align: center;
+    line-height:20px;
+    cursor: pointer;
+}
+.top input{
+    float:left;
+    width: 200px;
+    height: 20px;
+    outline:none;
+    border:1px solid #fff;
+    border-radius: 15px;
+    background: rgba(255,255,255,.3);
+    margin:0 7px;
+    color:#fff;
+    font-size:12px;
+    text-indent: 10px;
+}
+
+/*歌单和历史歌单样式*/
+#m_list,#h_list{
+    z-index:999;
+    position: absolute;
+    top:35px;
+    width: 200px;
+    padding:0 5px;
+    text-align: left;
+    font-size:12px;
+    display: none;
+    background:rgba(79, 74, 74, 0.8);
+}
+#m_list{
+    left:10px;
+}
+#h_list{
+    right:10px;
+}
+#m_list p,#h_list p{
+    height:24px;
+    line-height: 24px;
+    color:#ccc;
+    overflow: hidden;
+}
+#h_list p span{
+    float:right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#m_list p span:nth-child(1),#h_list p span:nth-child(1){
+    float:left;
+    cursor: pointer;
+}
+
+#m_list p span:nth-child(2){
+    float:right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#add_success,#remove_success,#songExist{
+    position: absolute;
+    top:200px;
+    left: 0;
+    right:0;
+    margin:auto;
+    width:130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color:#fff;
+    font-size: 14px;
+    background: rgba(0,0,0,.2);
+    transition:0.8s linear;
+    opacity:0;
+}
+
+/*歌曲名、歌手名、cd、歌词样式*/
+.title{
+    height: 25px;
+    margin-top:10px;
+    font-weight: bold;
+    font-size:16px;
+    color:#ccc;
+    text-align: center;
+}
+.singer{
+    height:25px;
+    font-size:14px;
+    color:#ccc;
+    text-align: center;
+    margin:5px 0;
+}
+.cd{
+    width:180px;
+    height: 180px;
+    background:url("../images/3.png") no-repeat;
+    background-size:100% 100%;
+    border-radius: 50%;
+    margin:auto;
+}
+.cd.rotate{
+    -webkit-animation:rot 5s linear infinite;
+    animation:rot 10s linear infinite;
+}
+
+@keyframes rot{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+.lrc{
+    width: 300px;
+    height: 200px;
+    margin:10px auto 0;
+    overflow:hidden;
+    color:#ccc;
+    text-align: center;
+}
+
+.lrc p{
+    line-height:20px;
+    font-size:12px;
+}
+.lrc .content{
+
+    position: relative;
+    top:0;
+    left:0;
+}
+
+/*----播放歌曲时间样式----*/
+
+.progress{
+    display: flex;
+    box-sizing: border-box;
+    color:#fff;
+    font-size: 12px;
+    padding: 10px;
+}
+.pro_bar{
+    display: flex;
+    width: 228px;
+    height: 2px;
+    background:#bebebe;
+    margin:9px 5px 0;
+}
+.pro_bar span{
+    display: block;
+    height:2px;
+    width: 0px;
+    background:rgb(0,255,66);
+}
+.pro_bar i{
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin-top:-2px;
+    background: url("../images/circle.gif");
+    border-radius: 50%;
+}
+
+/*-----底部四个按钮样式------*/
+.foot_btn{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top:10px;
+}
+.foot_btn div{
+    flex:1;
+    cursor: pointer;
+}
+#rand{
+    background: url(../images/rand1.png) no-repeat center;
+}
+#prev{
+    background: url(../images/pre.png) no-repeat center;
+}
+#play{
+    background: url(../images/pause.png) no-repeat center;
+}
+#next{
+    background: url(../images/next.png) no-repeat center;
+}
+
+#rand0,#rand1,#rand2{
+    position: absolute;
+    bottom:40px;
+    left:5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color:#fff;
+    font-size: 12px;
+    background: rgba(255,255,255,.08);
+    transition:0.5s linear;
+    opacity:0;
+}
+
+/*-----搜索歌单显示样式------*/
+#songs{
+    z-index:999;
+    position: fixed;
+    top:40px;
+    right:0;
+    left: 0;
+    margin:auto;
+    width: 230px;
+    background:#454545;
+}
+#ul1 p{
+    height:25px;
+    text-align: left;
+    border-bottom: 1px solid #fff;
+    padding: 0 5px;
+    color:#fff;
+    font-size:12px;
+    line-height:25px;
+    cursor: pointer;
+}
+#ul1 p span:nth-child(1){
+    float:left;
+}
+#ul1 p span:nth-child(2){
+    float:right;
+}
+
+
+#loading{
+    display: none;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,.7) url(../images/loading.gif) no-repeat center;
+}
+
+
+
