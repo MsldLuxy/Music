@@ -68,7 +68,7 @@ btn.addEventListener("click",function () {
         }else{
             myMusic.play();  // 播放音乐
             cd.className = 'cd rotate';  //  旋转
-            this.style.backgroundImage = 'url(../public/images/play.png)';  // 显示播放图片
+            this.style.backgroundImage = 'url(public/images/play.png)';  // 显示播放图片
         }
 
     }else{
@@ -77,7 +77,7 @@ btn.addEventListener("click",function () {
         //console.log(myMusic.currentTime,rot);
         cd.className = "cd";//  停止旋转
 
-        this.style.backgroundImage = 'url(../public/images/pause.png)'; // 显示暂停图片
+        this.style.backgroundImage = 'url(public/images/pause.png)'; // 显示暂停图片
     }
     mark = !mark;
 },false);
@@ -95,7 +95,7 @@ var rands = 1;   // 默认随机播放
 rand.onclick = function () {
     rands++;
     rands%=3;
-    this.style.backgroundImage = 'url(../public/images/rand'+rands+'.png)';
+    this.style.backgroundImage = 'url(public/images/rand'+rands+'.png)';
 
     //每次点击修改对于的显示
     if(rands === 0){
@@ -585,7 +585,7 @@ function load() {  // 当浏览器能够开始播放指定的音频/视频时, �
             cd.className = 'cd rotate';
             //loading.style.display = 'none';
         },100);
-        btn.style.backgroundImage = 'url(../public/images/play.png)';
+        btn.style.backgroundImage = 'url(public/images/play.png)';
     });
 }
 
