@@ -6,6 +6,7 @@ var cd = document.getElementsByClassName("cd")[0];  // 光碟旋转
 var btn = id("play");  // 播放按钮
 var con = document.getElementsByClassName("content")[0];  // 向上滚动歌词
 var txt = id("txt");  // 文本输入框 装歌词
+var searchicon = id("search-icon");
 var curTime = id("curTime");   // 当前歌曲时间
 var pro_bar = id("pro_bar");   // 进度长条
 var processBar = id("processBar");  //  宽度不断增加的进度条
@@ -53,7 +54,7 @@ music.addEventListener("click",function () {
     m_mark = true; //静态歌单是否隐藏
     h_mark = true;//历史歌单是否隐藏
     songs.style.display = "none"; //搜索的歌单隐藏
-    search.value = "";
+    // search.value = "";
 },false);
 
 
@@ -175,6 +176,14 @@ document.onkeydown = function (e) {
     }
 }
 
+//点击搜索图标搜索歌曲
+searchicon.onclick = function () {
+    if(search.value){
+        value = search.value;
+        inSearch = true;
+        playMusic();
+    }
+}
 //  搜索框获取焦点 时
 search.onfocus = function () {
     m_list.style.display = 'none';  // 隐藏 静态歌单
@@ -242,7 +251,7 @@ menu.addEventListener('click',function (e) {
       h_mark = true; //历史歌单是否隐藏为ture
       songs.style.display = "none"; //搜索的歌单隐藏
       m_list.style.display = "block";//显示歌单
-      search.value = ""; //搜索框中内容清空
+      // search.value = ""; //搜索框中内容清空
 
       var aP = m_list.getElementsByTagName("p");
       var aSpan1 = document.getElementsByClassName('songname');  // 歌名
@@ -259,11 +268,11 @@ menu.addEventListener('click',function (e) {
               value = this.innerHTML;
               playMusic();
               m_mark = true;
-
+              search.value = ""
               for(var j=0; j<aP.length; j++){
                   aSpan1[j].index1 = j;
               }
-              console.log(this.index1);
+              // console.log(this.index1);
               nth = this.index1;  //播放第几首索引值得改变
 
               aP = m_list.getElementsByTagName("p");
@@ -337,7 +346,7 @@ his.addEventListener("click",function (e) {
             m_mark = true;
             songs.style.display = "none"; //搜索的歌单隐藏
             h_list.style.display = "block";//显示历史歌单
-            search.value = ""; //搜索框中内容清空
+            // search.value = ""; //搜索框中内容清空
 
 
             var aSpan0 = document.getElementsByClassName('h_songname');  // 歌名
@@ -356,7 +365,7 @@ his.addEventListener("click",function (e) {
                     playMusic();
                     h_mark = true;
                     nth = this.index;
-
+                    search.value = ""
                     for(var j=0; j<aP.length; j++){
                         aSpan0[j].index = j;
                     }
@@ -364,6 +373,7 @@ his.addEventListener("click",function (e) {
 
                 //点击收藏
                 aSpan1[i].onclick = function (e) {
+
                     var exist = 0;
                     e.stopPropagation();
                     var oP = document.createElement('p');
@@ -491,8 +501,7 @@ function getmusic(data) {
                         songs.style.display = 'none';  //隐藏请求成功的歌单列表
                         addHistory(mp[i].songname);//点击的歌曲添加到右上角历史歌曲
 
-                        id = mp[i].songid;
-
+                        id = mp[i].songmid;
                         createLrc(id); // 请求歌词
                         load();
                     },false);
@@ -516,8 +525,8 @@ function getmusic(data) {
         cd.style.background = 'url('+url+') no-repeat center/100%';
         addHistory(mp[0].songname);//点击的歌曲添加到右上角历史歌曲
 
-        id = mp[0].songid;
-
+        id = mp[0].songmid;
+        console.log(222);
         createLrc(id); // 请求歌词
         load();
     }
@@ -565,9 +574,9 @@ function getLrc(data){
         nowTime();
         if( document.getElementById( curTime ) ){
             for( var i=0;i<aP.length;i++ ){
-                aP[i].style.cssText = 'fonts-size:12px;color:#ccc';
+                aP[i].style.cssText = 'fonts-size:12px;color:rgba(255,255,255,.65)';
             }
-            document.getElementById(curTime).style.cssText = 'color:#F26E6F;fonts-size:16px';
+            document.getElementById(curTime).style.cssText = 'color:rgba(255,255,255,1);fonts-size:16px';
             if( aP[5+num]&&aP[5+num].id == curTime ){
                 con.style.top = -20*num + 'px';
                 num++;
@@ -602,6 +611,7 @@ function createScript(value) {
 }
 //歌词
 function createLrc(id) {
+    // console.log(id);
     var oScript = document.createElement("script");
     //oScript.src = 'http://route.showapi.com/213-2?showapi_appid=62379&showapi_sign=b8a34df2796c4f68a5be6641c86fd4dc&showapi_timestamp='+formatterDateTime()+'&musicid='+id;
     oScript.src = 'http://route.showapi.com/213-2?showapi_appid=29331&showapi_sign=972fbdaf3d3d4213837c55284dde05d8 &musicid='+id+'&jsonpcallback=getLrc';

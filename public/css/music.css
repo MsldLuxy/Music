@@ -11,7 +11,7 @@ html,body{
     width:320px;
     height:640px;
     margin:auto;
-    background: #000;
+    background: rgba(0,0,0,.9);
 }
 
 .top{
@@ -46,7 +46,15 @@ html,body{
     font-size:12px;
     text-indent: 10px;
 }
-
+.top .search-icon{
+    position: absolute;
+    top:10px;
+    right:66px;
+    width: 20px;
+    height: 20px;
+    background: url("../images/search.png") no-repeat center/100%;
+    cursor: pointer;
+}
 /*歌单和历史歌单样式*/
 #m_list,#h_list{
     z-index:999;
@@ -122,7 +130,7 @@ html,body{
 .cd{
     width:180px;
     height: 180px;
-    background:url("../images/3.png") no-repeat;
+    background:url("https://y.gtimg.cn/music/photo_new/T002R150x150M000002qcJuX3lO3EZ.jpg?max_age=2592000") no-repeat;
     background-size:100% 100%;
     border-radius: 50%;
     margin:auto;
