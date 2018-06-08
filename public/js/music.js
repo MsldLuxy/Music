@@ -614,7 +614,7 @@ function createLrc(id) {
     // console.log(id);
     var oScript = document.createElement("script");
     //oScript.src = 'http://route.showapi.com/213-2?showapi_appid=62379&showapi_sign=b8a34df2796c4f68a5be6641c86fd4dc&showapi_timestamp='+formatterDateTime()+'&musicid='+id;
-    oScript.src = 'http://route.showapi.com/213-2?showapi_appid=29331&showapi_sign=972fbdaf3d3d4213837c55284dde05d8 &musicid='+id+'&jsonpcallback=getLrc';
+    oScript.src = 'https://route.showapi.com/213-2?showapi_appid=29331&showapi_sign=972fbdaf3d3d4213837c55284dde05d8 &musicid='+id+'&jsonpcallback=getLrc';
     //oScript.src = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?callback=getLrc&pcachetime=1494070301711&songmid='+id+'&g_tk=5381&jsonpCallback=getLrc&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8¬ice=0&platform=yqq&needNewCode=0'
     document.body.appendChild(oScript);
    /* ajax({
