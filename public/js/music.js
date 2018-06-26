@@ -112,7 +112,11 @@ rand.onclick = function () {
         rand1.style.opacity = 0;
         rand2.style.opacity = 1;
     }
-
+    setTimeout(function () {
+        rand0.style.opacity = 0;
+        rand1.style.opacity = 0;
+        rand2.style.opacity = 0;
+    },800);
 };
 
 //播放模式
@@ -574,11 +578,11 @@ function getLrc(data){
         nowTime();
         if( document.getElementById( curTime ) ){
             for( var i=0;i<aP.length;i++ ){
-                aP[i].style.cssText = 'fonts-size:12px;color:rgba(255,255,255,.65)';
+                aP[i].style.cssText = 'fonts-size:.32rem;color:rgba(255,255,255,.65)';
             }
-            document.getElementById(curTime).style.cssText = 'color:rgba(255,255,255,1);fonts-size:16px';
+            document.getElementById(curTime).style.cssText = 'color:rgba(255,255,255,1);fonts-size:.38rem';
             if( aP[5+num]&&aP[5+num].id == curTime ){
-                con.style.top = -20*num + 'px';
+                con.style.top = -0.5*num + 'rem';
                 num++;
             }
         }
