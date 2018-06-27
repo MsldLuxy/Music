@@ -34,6 +34,7 @@ html,body{
 .top input{
     flex:1;
     height: .64rem;
+    line-height: .64rem;
     outline:none;
     border:.01rem solid #fff;
     border-radius: .24rem;
@@ -45,7 +46,7 @@ html,body{
 }
 .top .search-icon{
     position: absolute;
-    top:.1rem;
+    top:.12rem;
     right:1.4rem;
     width: .60rem;
     height: .60rem;
@@ -56,7 +57,7 @@ html,body{
 #m_list,#h_list{
     z-index:999;
     position: absolute;
-    top:0.8rem;
+    top:1rem;
     width: 5.5rem;
     padding:0 .1rem;
     text-align: left;
@@ -143,7 +144,7 @@ html,body{
 }
 .lrc{
     width: 9rem;
-    height: 7rem;
+    height: 5.5rem;
     margin:.1rem auto 0;
     overflow:hidden;
     color:#ccc;
