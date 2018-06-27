@@ -453,9 +453,6 @@ his.addEventListener("click",function (e) {
 
 //jspnp动态请求歌曲
 function getmusic(data) {
-    //console.log(data.showapi_res_body.pagebean.contentlist);
-    console.log(data);
-   // var mp = data.showapi_res_body.pagebean.contentlist;
     var mp = data.data.song.list;
 
     if(inSearch){ //  true 代表回车键 搜索歌曲 就去动态请求api 及一些渲染歌单信息
@@ -530,7 +527,6 @@ function getmusic(data) {
         addHistory(mp[0].songname);//点击的歌曲添加到右上角历史歌曲
 
         id = mp[0].songmid;
-        console.log(222);
         createLrc(id); // 请求歌词
         load();
     }
