@@ -504,7 +504,7 @@ function getmusic(data) {
                         id = mp[i].songmid;
                         createLrc(id); // 请求歌词
 
-                        myMusic.addEventListener('canplay',function () {
+                        // myMusic.addEventListener('canplay',function () {
                             setTimeout(function () {
                                 myMusic.play();
                                 mark = false;  //暂停状态为false即正在播放音乐
@@ -512,7 +512,7 @@ function getmusic(data) {
                                 //loading.style.display = 'none';
                             },200);
                             btn.style.backgroundImage = 'url(public/images/play.png)';
-                        },false);
+                        // },false);
 
                     },false);
                 }(i);
@@ -539,7 +539,7 @@ function getmusic(data) {
         id = mp[0].songmid;
         createLrc(id); // 请求歌词
 
-        myMusic.addEventListener('canplay',function () {
+        // myMusic.addEventListener('canplay',function () {
             setTimeout(function () {
                 myMusic.play();
                 mark = false;  //暂停状态为false即正在播放音乐
@@ -547,7 +547,7 @@ function getmusic(data) {
                 //loading.style.display = 'none';
             },200);
             btn.style.backgroundImage = 'url(public/images/play.png)';
-        },false);
+        // },false);
     }
 }
 

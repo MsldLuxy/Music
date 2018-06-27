@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84eb1898-fb72-493f-8575-a911d58cc8e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/music.js" afterPath="$PROJECT_DIR$/public/js/music.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,8 +41,8 @@
       <file leaf-file-name="music.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/music.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="612" column="36" lean-forward="true" selection-start-line="612" selection-start-column="36" selection-end-line="612" selection-end-column="36" />
+            <state relative-caret-position="350">
+              <caret line="550" column="5" lean-forward="true" selection-start-line="550" selection-start-column="5" selection-end-line="550" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -173,7 +172,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20101000" />
+    <option name="totallyTimeSpent" value="20194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -427,8 +426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/music.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="612" column="36" lean-forward="true" selection-start-line="612" selection-start-column="36" selection-end-line="612" selection-end-column="36" />
+        <state relative-caret-position="350">
+          <caret line="550" column="5" lean-forward="true" selection-start-line="550" selection-start-column="5" selection-end-line="550" selection-end-column="5" />
           <folding />
         </state>
       </provider>
