@@ -457,7 +457,7 @@ function getmusic(data) {
 
     if(inSearch){ //  true 代表回车键 搜索歌曲 就去动态请求api 及一些渲染歌单信息
         if(mp.length){
-            loading.style.display = "none";
+            // loading.style.display = "none";
             songs.style.display = "block";
             var html = "";
 
@@ -587,7 +587,7 @@ function getLrc(data){
 }
 //  播放时，旋转 播放按钮
 function load() {  // 当浏览器能够开始播放指定的音频/视频时, 该视频已准备好开始播放，发生canplay事件
-    myMusic.addEventListener('canplay',function () {
+    myMusic.oncanplay = function () {
         setTimeout(function () {
             myMusic.play();
             mark = false;  //暂停状态为false即正在播放音乐
@@ -595,7 +595,7 @@ function load() {  // 当浏览器能够开始播放指定的音频/视频时, �
             //loading.style.display = 'none';
         },100);
         btn.style.backgroundImage = 'url(public/images/play.png)';
-    });
+    }
 }
 
 
@@ -630,7 +630,7 @@ function createLrc(id) {
     });*/
 
 }
-function ajax( json ) {
+/*function ajax( json ) {
 
     //处理参数
     var type = json.type || "GET";
@@ -674,7 +674,7 @@ function ajax( json ) {
             }
         }
     };
-}
+}*/
 //jsonp时间戳
 function formatterDateTime() {
     var date=new Date()
