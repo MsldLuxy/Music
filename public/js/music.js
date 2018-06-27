@@ -503,6 +503,7 @@ function getmusic(data) {
 
                         id = mp[i].songmid;
                         createLrc(id); // 请求歌词
+                        myMusic.play();
                         load();
 
                     },false);
@@ -529,6 +530,7 @@ function getmusic(data) {
 
         id = mp[0].songmid;
         createLrc(id); // 请求歌词
+        myMusic.play();
         load();
     }
 }
