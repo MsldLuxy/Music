@@ -587,19 +587,15 @@ function getLrc(data){
 }
 //  播放时，旋转 播放按钮
 function load() {  // 当浏览器能够开始播放指定的音频/视频时, 该视频已准备好开始播放，发生canplay事件
-    alert(111);
-    myMusic.oncanplay = function () {
-        alert(222);
+    // myMusic.addEventListener('canplay',function () {
         setTimeout(function () {
-            alert(333);
             myMusic.play();
             mark = false;  //暂停状态为false即正在播放音乐
             cd.className = 'cd rotate';
             //loading.style.display = 'none';
         },100);
-        alert(444);
         btn.style.backgroundImage = 'url(public/images/play.png)';
-    }
+    // })
 }
 
 
