@@ -74,10 +74,8 @@ btn.addEventListener("click",function () {
 
     }else{
         myMusic.pause();  // 暂停
-        var rot = myMusic.currentTime % 5 *72;
         //console.log(myMusic.currentTime,rot);
         cd.className = "cd";//  停止旋转
-
         this.style.backgroundImage = 'url(public/images/pause.png)'; // 显示暂停图片
     }
     mark = !mark;
@@ -490,6 +488,7 @@ function getmusic(data) {
 
                         //图片
                         var albummid = mp[i].albummid;
+
                         var url = 'https://y.gtimg.cn/music/photo_new/T002R150x150M000'+albummid+'.jpg?max_age=2592000';
                         cd.style.background = 'url('+url+') no-repeat center/100%';
 
@@ -504,9 +503,7 @@ function getmusic(data) {
 
                         id = mp[i].songmid;
                         createLrc(id); // 请求歌词
-                        setTimeout(function () {
-                            load();
-                        },500);
+                        load();
 
                     },false);
                 }(i);
@@ -520,6 +517,7 @@ function getmusic(data) {
         //myMusic.src = mp[0].m4a;//audio的路径
         //歌曲路径
         var songmid = mp[0].songmid;
+
         myMusic.src = 'http://ws.stream.qqmusic.qq.com/C100'+songmid+'.m4a?fromtag=0&guid=126548448';
         //loading.style.display = 'block';//加载显示
 
@@ -531,9 +529,7 @@ function getmusic(data) {
 
         id = mp[0].songmid;
         createLrc(id); // 请求歌词
-        setTimeout(function () {
-            load();
-        },500);
+        load();
     }
 }
 
@@ -592,15 +588,15 @@ function getLrc(data){
 }
 //  播放时，旋转 播放按钮
 function load() {  // 当浏览器能够开始播放指定的音频/视频时, 该视频已准备好开始播放，发生canplay事件
-    // myMusic.addEventListener('canplay',function () {
-    //     setTimeout(function () {
+    myMusic.addEventListener('canplay',function () {
+        setTimeout(function () {
             myMusic.play();
             mark = false;  //暂停状态为false即正在播放音乐
             cd.className = 'cd rotate';
             //loading.style.display = 'none';
-        // },200);
+        },200);
         btn.style.backgroundImage = 'url(public/images/play.png)';
-    // })
+    },false);
 }
 
 
